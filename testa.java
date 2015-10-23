@@ -92,15 +92,10 @@ void collisions() {
 }
 
 void show() {
-  fill( 255,255,255); one( cueX, cueY);
-  fill( 255,0,0); one (redX, redY);
-  fill(0,255,0); one (greenX, greenY);
-  fill(230,240,120); one (yellowX, yellowY);
-}
-
-void one( float x, float y ) {
-  ellipse(x,y, 40,40);
-  
+  fill( 255,255,255); ellipse( cueX, cueY, 40,40);
+  fill( 255,0,0);  ellipse(redX, redY, 40,40);
+  fill(0,255,0); ellipse(greenX, greenY, 40,40);
+  fill(230,240,120); ellipse(yellowX, yellowY, 40,40);
 }
 
 void messages() {
