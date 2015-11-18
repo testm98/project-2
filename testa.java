@@ -16,7 +16,7 @@ float yellowX, yellowY, yellowDX, yellowDY;
 
 //setup///
 void setup() {
-  size (800,600);
+  size (700,500);
   left= 80;
   right= width-50;
   top= 120;
@@ -60,17 +60,26 @@ void table( float left, float right, float top, float bottom ) {
  
  //ACTION//
  void bounce() {
-   redX += redDX; if (redX<left || redX>right) redDX *= -1.5;
-   redY += redDY; if (redY<top || redY>bottom) redDY *= -1.5;
+   if (redX<left || redX>right) redDX *= -1;
+   if (redY<top || redY>bottom) redDY *= -1;
    
-   yellowX += yellowDX; if (yellowX<left || yellowX>right) yellowDX *= -1.5;
-   yellowY += yellowDY; if (yellowY<top || yellowY>bottom) yellowDY *= -1.5;
+   redX += redDX; 
+   redY += redDY;
+   
+   if (yellowX<left || yellowX>right) yellowDX *= -1;
+   if (yellowY<top || yellowY>bottom) yellowDY *= -1;
   
-   greenX += greenDX; if (greenX<left || greenX>right) greenDX *= -1.5;
-   greenY += greenDY; if (greenY<top || greenY>bottom) greenDY *= -1.5;
+   yellowX += yellowDX;
+   yellowY += yellowDY;
+  
+   if (greenX<left || greenX>right) greenDX *= -1;
+   if (greenY<top || greenY>bottom) greenDY *= -1;
    
-   cueX += cueDX; if (cueX<left || cueX>right) cueDX *= -1.5;
-   cueY += cueDY; if (cueY<top || cueY>bottom) cueDY *= -1.5;
+   greenX += greenDX;
+   greenY += greenDY; 
+   
+   cueX += cueDX; if (cueX<left || cueX>right) cueDX *= -1;
+   cueY += cueDY; if (cueY<top || cueY>bottom) cueDY *= -1;
  }
  
 void collisions() {
